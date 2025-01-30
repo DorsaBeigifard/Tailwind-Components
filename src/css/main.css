@@ -1,0 +1,8 @@
+@tailwind base;
+/* base classes, like resets */
+@tailwind components;
+/* to use layer and groupping the class */
+@tailwind utilities;
+/* utility classes */
+
+

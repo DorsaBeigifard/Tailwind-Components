@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tailwind Practice</title>
+    <link rel="stylesheet" href="./buld/tailwind.css" />
+    <link rel="stylesheet" href="../src/css/main.css" />
+  </head>
+  <body class="bg-gray-100 flex justify-center items-center h-screen">
+    <div class="relative" x-data="{ IsOpen: false }">
+      <button
+        @click="IsOpen = !IsOpen"
+        class="px-4 py-2 bg-blue-500 text-white rounded-lg inline-flex items-center focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-white z-10 relative"
+      >
+        <span>Show More</span>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+          class="size-5 ml-1"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z"
+            clip-rule="evenodd"
+          />
+        </svg>
+      </button>
+      <button
+        x-show="IsOpen"
+        @click="IsOpen = !IsOpen"
+        id="backDrop"
+        class="bg-gray-400 inset-0 fixed opacity-50"
+      ></button>
+      <div
+        class="bg-white w-56 mt-2 rounded-lg overflow-x-hidden border border-gray-200 absolute"
+        x-show="IsOpen"
+      >
+        <a href="#" class="block text-gray-700 p-2 hover:bg-gray-200">Account</a
+        ><a href="#" class="block text-gray-700 p-2 hover:bg-gray-200"
+          >Support</a
+        ><a href="#" class="block text-gray-700 p-2 hover:bg-gray-200"
+          >Setting</a
+        >
+      </div>
+    </div>
+    <script src="//unpkg.com/alpinejs" defer></script>
+  </body>
+</html>
